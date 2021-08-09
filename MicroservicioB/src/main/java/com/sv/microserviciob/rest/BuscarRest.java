@@ -36,7 +36,7 @@ public class BuscarRest {
 	
 	
 	@GetMapping("/nominas")
-	 public ResponseEntity<?> buscarFormaP(@RequestParam int id){
+	 public ResponseEntity<?> buscarFormaP(@RequestParam Integer empresa){
 		  
 		ResponseEntity<?> respuesta = null;
 		 
@@ -46,6 +46,21 @@ public class BuscarRest {
    } catch(Exception exc) {
 			respuesta = restResponse.createCustomizedResponse(null, 404,"404", "Error en el servicio" ); 
 		}
-		return ResponseEntity.ok(VR.findByNominas(id));	
+		return ResponseEntity.ok(VR.findByNominas(empresa));	
+	}  
+	
+	
+	@GetMapping("/fechas")
+	 public ResponseEntity<?> buscarFechas(@RequestParam String fecha){
+		  
+		ResponseEntity<?> respuesta = null;
+		 
+		try {
+			 respuesta = restResponse.createCustomizedResponse(null, 200,"0", "Success" ); 
+	    
+  } catch(Exception exc) {
+			respuesta = restResponse.createCustomizedResponse(null, 404,"404", "Error en el servicio" ); 
+		}
+		return ResponseEntity.ok(VR.findByFechas(fecha));	
 	}  
 }

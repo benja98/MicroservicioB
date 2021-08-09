@@ -29,12 +29,29 @@ public class BuscarService {
 		return f;
 	}
 	
-	public List<Ventas> findByfindByNominas(int id) {
+	public List<Ventas> findByfindByNominas(Integer empresa) {
 		
 		List<Ventas> f = null; 
 		try {
 			
-			f = VR.findByNominas(id);
+			f = VR.findByNominas(empresa);
+			 
+			 
+			if(f == null) {
+				System.out.println("Estos datos no existen");
+			} 
+		}catch(Exception e) {
+			e.printStackTrace();
+		} 
+		return f;
+	}
+	
+	public List<Ventas> findByFecha(String fecha) {
+		
+		List<Ventas> f = null; 
+		try {
+			
+			f = VR.findByFechas(fecha);
 			 
 			 
 			if(f == null) {

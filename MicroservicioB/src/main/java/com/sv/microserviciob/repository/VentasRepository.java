@@ -14,6 +14,10 @@ public interface VentasRepository extends JpaRepository<Ventas, Integer> {
 	List<Ventas> findByFormaP(String forma);
 	
 	//buscar por nomina
-		@Query("select v from Ventas v inner join Empresas e on v.empresasId = e.id")
-		List<Ventas> findByNominas(int id);
+	@Query("select v from Ventas v inner join Empresas e on v.empresasId = e.id where e.id = ?1")
+	List<Ventas> findByNominas(Integer empresa);
+		
+	//buscar por nomina
+	@Query("select v from Ventas v where v.fechaVenta = ?1")
+	List<Ventas> findByFechas(String fecha);
 }
