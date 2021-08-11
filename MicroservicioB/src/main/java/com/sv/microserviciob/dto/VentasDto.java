@@ -8,30 +8,27 @@ public class VentasDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	//Variables:
-	private int id; 
     private String fecha; 
-    private int empresasId; 
+    private int empresa; 
     private int factura; 
     private String fechaVenta;  
     private String fechaPago; 
     private String impaga; 
     private String impresa; 
-    private String formaPago; 
-    private String tipoFactura; 
+    private String formaPago;
+    private String tipoFactura;
     private Double subTotal; 
-    private Double subTotalIva; 
-    private Double subTotalCesc; 
-    private Double subTotalDescuentos; 
+    private Double subTotaliva; 
+    private Double subTotalcesc; 
+    private Double subTotaldescuentos; 
     private Double totalaPagar;
     
-    //constructores:
-	public VentasDto(int id, String fecha, int empresasId, int factura, String fechaVenta, String fechaPago, String impaga,
-			String impresa, String formaPago, String tipoFactura, Double subTotal, Double subTotalIva,
-			Double subTotalCesc, Double subTotalDescuentos, Double totalaPagar) {
+	public VentasDto(String fecha, int empresa, int factura, String fechaVenta, String fechaPago, String impaga,
+			String impresa, String formaPago, String tipoFactura, Double subTotal, Double subTotaliva,
+			Double subTotalcesc, Double subTotaldescuentos, Double totalaPagar) {
 		super();
-		this.id = id;
 		this.fecha = fecha;
-		this.empresasId = empresasId;
+		this.empresa = empresa;
 		this.factura = factura;
 		this.fechaVenta = fechaVenta;
 		this.fechaPago = fechaPago;
@@ -40,21 +37,13 @@ public class VentasDto implements Serializable {
 		this.formaPago = formaPago;
 		this.tipoFactura = tipoFactura;
 		this.subTotal = subTotal;
-		this.subTotalIva = subTotalIva;
-		this.subTotalCesc = subTotalCesc;
-		this.subTotalDescuentos = subTotalDescuentos;
+		this.subTotaliva = subTotaliva;
+		this.subTotalcesc = subTotalcesc;
+		this.subTotaldescuentos = subTotaldescuentos;
 		this.totalaPagar = totalaPagar;
 	}
 	public VentasDto() {
 		super();
-	}
-	
-	//Get y set:
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getFecha() {
 		return fecha;
@@ -62,11 +51,11 @@ public class VentasDto implements Serializable {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	public int getEmpresasId() {
-		return empresasId;
+	public int getEmpresa() {
+		return empresa;
 	}
-	public void setEmpresasId(int empresasId) {
-		this.empresasId = empresasId;
+	public void setEmpresa(int empresa) {
+		this.empresa = empresa;
 	}
 	public int getFactura() {
 		return factura;
@@ -116,23 +105,23 @@ public class VentasDto implements Serializable {
 	public void setSubTotal(Double subTotal) {
 		this.subTotal = subTotal;
 	}
-	public Double getSubTotalIva() {
-		return subTotalIva;
+	public Double getSubTotaliva() {
+		return subTotaliva;
 	}
-	public void setSubTotalIva(Double subTotalIva) {
-		this.subTotalIva = subTotalIva;
+	public void setSubTotaliva(Double subTotaliva) {
+		this.subTotaliva = subTotaliva;
 	}
-	public Double getSubTotalCesc() {
-		return subTotalCesc;
+	public Double getSubTotalcesc() {
+		return subTotalcesc;
 	}
-	public void setSubTotalCesc(Double subTotalCesc) {
-		this.subTotalCesc = subTotalCesc;
+	public void setSubTotalcesc(Double subTotalcesc) {
+		this.subTotalcesc = subTotalcesc;
 	}
-	public Double getSubTotalDescuentos() {
-		return subTotalDescuentos;
+	public Double getSubTotaldescuentos() {
+		return subTotaldescuentos;
 	}
-	public void setSubTotalDescuentos(Double subTotalDescuentos) {
-		this.subTotalDescuentos = subTotalDescuentos;
+	public void setSubTotaldescuentos(Double subTotaldescuentos) {
+		this.subTotaldescuentos = subTotaldescuentos;
 	}
 	public Double getTotalaPagar() {
 		return totalaPagar;
@@ -142,7 +131,4 @@ public class VentasDto implements Serializable {
 	}
     
     
-    
-
-
 }

@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.sv.microserviciob.modelo.Empresas;
+import com.sv.microserviciob.modelo.Facturas;
+import com.sv.microserviciob.modelo.Totales;
+import com.sv.microserviciob.repository.FacturasRepository;
+import com.sv.microserviciob.repository.TotalesRepository;
 import com.sv.microserviciob.repository.VentasRepository;
 import com.sv.microserviciob.util.RestResponse;
 
@@ -16,7 +22,12 @@ import com.sv.microserviciob.util.RestResponse;
 @RequestMapping("/buscar")
 public class BuscarRest {
 	
-	@Autowired VentasRepository VR;
+	@Autowired 
+	TotalesRepository TR;
+	@Autowired 
+	VentasRepository VR;
+	@Autowired
+	FacturasRepository FR;
 	@Autowired
 	private RestResponse restResponse;
 	
@@ -35,32 +46,32 @@ public class BuscarRest {
 	}  
 	
 	
-	@GetMapping("/nominas")
-	 public ResponseEntity<?> buscarFormaP(@RequestParam Integer empresa){
-		  
-		ResponseEntity<?> respuesta = null;
-		 
-		try {
-			 respuesta = restResponse.createCustomizedResponse(null, 200,"0", "Success" ); 
-	    
-   } catch(Exception exc) {
-			respuesta = restResponse.createCustomizedResponse(null, 404,"404", "Error en el servicio" ); 
-		}
-		return ResponseEntity.ok(VR.findByNominas(empresa));	
-	}  
+//	@GetMapping("/nominas/{id}")
+//	 public ResponseEntity<?> buscarFormaP(@PathVariable("id") Empresas empresa){
+//		  
+//		ResponseEntity<?> respuesta = null;
+//		 
+//		try {
+//			 respuesta = restResponse.createCustomizedResponse(null, 200,"0", "Success" ); 
+//	    
+//   } catch(Exception exc) {
+//			respuesta = restResponse.createCustomizedResponse(null, 404,"404", "Error en el servicio" ); 
+//		}
+//		return ResponseEntity.ok(VR.findByNominas(empresa));	
+//	}  
 	
 	
-	@GetMapping("/fechas")
-	 public ResponseEntity<?> buscarFechas(@RequestParam String fecha){
-		  
-		ResponseEntity<?> respuesta = null;
-		 
-		try {
-			 respuesta = restResponse.createCustomizedResponse(null, 200,"0", "Success" ); 
-	    
-  } catch(Exception exc) {
-			respuesta = restResponse.createCustomizedResponse(null, 404,"404", "Error en el servicio" ); 
-		}
-		return ResponseEntity.ok(VR.findByFechas(fecha));	
-	}  
+//	@GetMapping("/fechas")
+//	 public ResponseEntity<?> buscarFechas(@RequestParam String fecha){
+//		  
+//		ResponseEntity<?> respuesta = null;
+//		 
+//		try {
+//			 respuesta = restResponse.createCustomizedResponse(null, 200,"0", "Success" ); 
+//	    
+//  } catch(Exception exc) {
+//			respuesta = restResponse.createCustomizedResponse(null, 404,"404", "Error en el servicio" ); 
+//		}
+//		return ResponseEntity.ok(VR.findByFechas(fecha));	
+//	}  
 }

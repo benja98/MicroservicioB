@@ -16,9 +16,10 @@ public class Empresas implements Serializable{
 	
 	//Variables:
 	@Id
+    @Column(name="id")
 	private int id;
 	
-	@Column
+	 @Column(name="empresa")
 	private String empresa;
 
 	
@@ -51,4 +52,10 @@ public class Empresas implements Serializable{
 	public void setEmpresa(String empresa) {
 		this.empresa = empresa;
 	}
+	
+	
+	
+	
+	
+
 }
