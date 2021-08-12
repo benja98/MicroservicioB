@@ -29,7 +29,6 @@ public class Ventas implements Serializable{
     @Column(name="fecha") 
     private String fecha;
     
-    //@Column(name="empresasid") 
     @JoinColumn(name="empresa" , referencedColumnName= "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Empresas empresa;
